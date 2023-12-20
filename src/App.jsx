@@ -31,14 +31,14 @@ function App () {
     adviceRun()
     console.log("hiii")
   }
-  useEffect(() => {
-     adviceRun()
-  }, [adviceRun,  handleClick])
+  // useEffect(() => {
+  //    adviceRun()
+  // }, [adviceRun,  handleClick])
 
 
   return (
     <>
-      <h1>Advice app{advice}</h1>
+      <h1  className='bg-red-200'>Advice app{advice}</h1>
       <h2>id is{id}</h2>
 
       <button onClick={handleClick}> click to advice</button>
