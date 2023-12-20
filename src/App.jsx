@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react'
 function App () {
   const [data, setdata] = useState()
   const [id, setid] = useState(1)
-  const [advice, setadvice] = useState("  zal ka jevan")
+  const [advice, setadvice] = useState('  zal ka jevan')
 
   0
-0
+  0
 
-   function adviceRun () {
+  function adviceRun () {
     try {
-       fetch('https://api.adviceslip.com/advice')
+      fetch('https://api.adviceslip.com/advice')
         .then(res => {
           return res.json()
         })
@@ -19,29 +19,31 @@ function App () {
 
           setid(data1.slip.id)
           setadvice(data.slip.advice)
-
         })
     } catch (error) {
       console.log(error)
     }
   }
 
-
   function handleClick () {
     adviceRun()
-    console.log("hiii")
+    console.log('hiii')
   }
   // useEffect(() => {
   //    adviceRun()
   // }, [adviceRun,  handleClick])
-
-
+console.log(setadvice)
   return (
     <>
-      <h1  className='bg-red-200'>Advice app{advice}</h1>
-      <h2>id is{id}</h2>
+      <div className='flex items-center justify-center   w-full h-screen bg-blue-800'>
+      <div className=''>
 
-      <button onClick={handleClick}> click to advice</button>
+        <h1 className='bg-blue-200   p-10 text-[50px] align-middle  '> Advice:- {advice}</h1>
+        <h2>id is{id}</h2>
+
+        <button className='bg-blue-100 p-4'  onClick={handleClick}> click to advice</button>
+      </div>
+      </div>
     </>
   )
 }
