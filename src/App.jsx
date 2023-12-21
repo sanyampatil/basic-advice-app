@@ -29,20 +29,25 @@ function App () {
     adviceRun()
     console.log('hiii')
   }
-  // useEffect(() => {
-  //    adviceRun()
-  // }, [adviceRun,  handleClick])
-console.log(setadvice)
+  useEffect(() => {
+    adviceRun()
+  }, [])
+  console.log(setadvice)
   return (
     <>
-      <div className='flex items-center justify-center   w-full h-screen bg-blue-800'>
       <div className=''>
+        <div className=''>
+          <h1 className=' text-2xl'> Advice:- {advice}</h1>
+          <h2>id:-{id}</h2>
 
-        <h1 className='bg-blue-200   p-10 text-[50px] align-middle  '> Advice:- {advice}</h1>
-        <h2>id is{id}</h2>
-
-        <button className='bg-blue-100 p-4'  onClick={handleClick}> click to advice</button>
-      </div>
+          <button
+            className=' text-2xl  bg-blue-200  border  border-black-500'
+            onClick={handleClick}
+          >
+            {' '}
+            click to advice
+          </button>
+        </div>
       </div>
     </>
   )
