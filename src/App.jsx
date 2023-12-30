@@ -3,7 +3,7 @@ import axios from 'axios'
 function App () {
   const [data, setdata] = useState()
   const [id, setid] = useState(1)
-  const [advice, setadvice] = useState('  zal ka jevan')
+  const [advice, setadvice] = useState('zal ka jevan')
   const [isloading, setisloading] = useState(true)
 
   0
@@ -19,24 +19,28 @@ function App () {
   }
 
   function handleClick () {
+    console.log("hiiii")
+    setisloading(true)
     adviceRun()
+    
   }
   useEffect(() => {
     adviceRun()
-  }, [handleClick, setadvice, setid, setdata])
+
+  }, [handleClick, setadvice, setdata])
 
   return (
     <>
       <div className=' bg-blue-950 text-white w-full h-screen flex items-center justify-center  '>
         <div className=' bg-blue-900 w-[50%] h-[50%] rounded-xl'>
-          <div className='flex flex-col items-center justify-center mt-12'>
+          <div className='flex flex-col items-center justify-center mt-[15%]'>
             <h1 className=' text-center font-bold text-xl'>
               {' '}
-              {isloading ? 'loading....' : advice}
+              {(isloading) ? 'loading...' : advice}
             </h1>
 
             <button
-              className=' bg-blue-100  p-2 mt-10 rounded-xl font-bold text-blue-950 border hover:bg-slate-100  border-black-500'
+              className=' bg-blue-100  p-2 mt-[10%] rounded-xl font-bold text-blue-950 border hover:bg-slate-100  border-black-500'
               onClick={handleClick}
             >
               {/* {' '} */}
